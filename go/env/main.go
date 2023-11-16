@@ -75,6 +75,13 @@ func setupEnv(ctx context.Context, repo *github.Repository) error {
 		return err
 	}
 
+	_, _, err = c.Repositories.CreateDeploymentBranchPolicy(ctx, repo.GetOwner().GetLogin(), repo.GetName(), *envName, &github.DeploymentBranchPolicyRequest{
+		Name: repo.MasterBranch,
+	})
+	if err != nil {
+		return err
+	}
+
 	k, _, err := c.Actions.GetEnvPublicKey(ctx, int(*repo.ID), *envName)
 	if err != nil {
 		return fmt.Errorf("could not get key: %w", err)
