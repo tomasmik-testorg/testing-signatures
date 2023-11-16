@@ -12,4 +12,3 @@ jobs:
     with:
       owner: ${{ github.repository_owner }}
       repo: ${{ github.event.repository.name }}
-    secrets: inherit
