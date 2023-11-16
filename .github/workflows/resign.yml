@@ -14,3 +14,5 @@ jobs:
       repo: ${{ github.event.repository.name }}
     secrets:
       GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
+      GH_PAT: ${{ secrets.GH_PAT }}
+
