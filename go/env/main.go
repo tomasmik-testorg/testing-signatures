@@ -76,7 +76,7 @@ func setupEnv(ctx context.Context, repo *github.Repository) error {
 	}
 
 	_, _, err = c.Repositories.CreateDeploymentBranchPolicy(ctx, repo.GetOwner().GetLogin(), repo.GetName(), *envName, &github.DeploymentBranchPolicyRequest{
-		Name: repo.MasterBranch,
+		Name: repo.DefaultBranch,
 	})
 	if err != nil {
 		return err
