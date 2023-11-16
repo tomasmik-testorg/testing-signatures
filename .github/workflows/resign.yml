@@ -10,8 +10,8 @@ jobs:
   resign:
     uses: opentffoundation/scripts/.github/workflows/sign.yml@convert-to-reusable
     with:
-      owner: ${{ github.repository_owner }}
-      repo: ${{ github.event.repository.name }}
+     owner: ${{ github.repository_owner }}
+     repo: ${{ github.repository_name }}
     secrets:
       GPG_PRIVATE_KEY: ${{ secrets.GPG_PRIVATE_KEY }}
       GH_PAT: ${{ secrets.GH_PAT }}
