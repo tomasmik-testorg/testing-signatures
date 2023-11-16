@@ -8,7 +8,7 @@ permissions:
 
 jobs:
   resign:
-    uses: opentffoundation/scripts/.github/workflows/sign.yml@main
+    uses: opentffoundation/scripts/.github/workflows/sign.yml@convert-to-reusable
     with:
       owner: ${{ github.repository_owner }}
       repo: ${{ github.event.repository.name }}
